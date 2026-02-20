@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal | Cirrus Flight Academy Auburn</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/calendar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="portal-page">
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-plane"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-main">CIRRUS FLIGHT ACADEMY</span>
+                    <span class="logo-sub">AUBURN</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#training">Training</a></li>
+                <li><a href="#" class="active">Student Portal</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Portal Header -->
+    <section class="portal-header">
+        <div class="container">
+            <div class="portal-welcome">
+                <h1>Student <span class="accent">Portal</span></h1>
+                <p>Schedule flights, view availability, and manage your training</p>
+            </div>
+
+            <!-- Demo Login Banner -->
+            <div class="demo-banner">
+                <div class="demo-icon">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <div class="demo-content">
+                    <strong>Demo Access - Choose a Role</strong>
+                    <p>Test different permission levels:</p>
+                    <div class="demo-credentials-grid">
+                        <div class="demo-role">
+                            <span class="role-badge admin">ADMIN</span>
+                            <span><i class="fas fa-user"></i> <code>admin</code></span>
+                            <span><i class="fas fa-key"></i> <code>admin123</code></span>
+                        </div>
+                        <div class="demo-role">
+                            <span class="role-badge instructor">INSTRUCTOR</span>
+                            <span><i class="fas fa-user"></i> <code>instructor</code></span>
+                            <span><i class="fas fa-key"></i> <code>cfi123</code></span>
+                        </div>
+                        <div class="demo-role">
+                            <span class="role-badge student">STUDENT</span>
+                            <span><i class="fas fa-user"></i> <code>student</code></span>
+                            <span><i class="fas fa-key"></i> <code>fly123</code></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Section (shown when not logged in) -->
+    <section class="login-section" id="loginSection">
+        <div class="container">
+            <div class="login-grid">
+                <div class="login-info">
+                    <h2>Access Your <span class="accent">Account</span></h2>
+                    <p>Log in to schedule aircraft, book instructor sessions, view your training progress, and access exclusive student resources.</p>
+
+                    <div class="login-features">
+                        <div class="login-feature">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Schedule Flights 24/7</span>
+                        </div>
+                        <div class="login-feature">
+                            <i class="fas fa-user-clock"></i>
+                            <span>Book Instructor Sessions</span>
+                        </div>
+                        <div class="login-feature">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Track Training Progress</span>
+                        </div>
+                        <div class="login-feature">
+                            <i class="fas fa-cloud-sun"></i>
+                            <span>Live METAR Weather</span>
+                        </div>
+                    </div>
+
+                    <div class="new-student">
+                        <h4>New Student?</h4>
+                        <p>Contact us to set up your student account and begin your aviation journey.</p>
+                        <a href="index.html#contact" class="btn btn-secondary">
+                            <span>Get Started</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="login-form-wrapper">
+                    <form class="login-form" id="loginForm">
+                        <h3>Sign In</h3>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <div class="input-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                            </div>
+                        </div>
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="remember">
+                                <span class="checkmark"></span>
+                                Remember me
+                            </label>
+                            <a href="#" class="forgot-link">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>Sign In</span>
+                            <i class="fas fa-sign-in-alt"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section (shown when logged in) -->
+    <section class="dashboard-section" id="dashboardSection" style="display: none;">
+        <div class="container">
+            <!-- User Header -->
+            <div class="user-header">
+                <div class="user-info">
+                    <div class="user-avatar" id="userAvatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <h3>Welcome back, <span id="userName">User</span></h3>
+                        <p><span class="role-badge-sm" id="userRoleBadge">STUDENT</span> <span id="userSubtitle">Private Pilot Student • 28.5 hours logged</span></p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-secondary btn-sm" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Sign Out</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Admin Tabs (only visible to admins) -->
+            <div class="dashboard-tabs" id="dashboardTabs" style="display: none;">
+                <button class="tab-btn active" data-tab="schedule" onclick="switchTab('schedule')">
+                    <i class="fas fa-calendar-alt"></i> Schedule
+                </button>
+                <button class="tab-btn" data-tab="users" onclick="switchTab('users')">
+                    <i class="fas fa-users"></i> Manage Users
+                </button>
+                <button class="tab-btn" data-tab="documents" onclick="switchTab('documents')">
+                    <i class="fas fa-folder"></i> Documents
+                </button>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="dashboard-stats" id="dashboardStats">
+                <div class="dash-stat">
+                    <div class="dash-stat-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="dash-stat-content">
+                        <span class="dash-stat-value" id="statHours">28.5</span>
+                        <span class="dash-stat-label">Total Hours</span>
+                    </div>
+                </div>
+                <div class="dash-stat">
+                    <div class="dash-stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="dash-stat-content">
+                        <span class="dash-stat-value" id="statFlights">3</span>
+                        <span class="dash-stat-label">Upcoming Flights</span>
+                    </div>
+                </div>
+                <div class="dash-stat">
+                    <div class="dash-stat-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="dash-stat-content">
+                        <span class="dash-stat-value" id="statPhase">Phase 3</span>
+                        <span class="dash-stat-label">Training Stage</span>
+                    </div>
+                </div>
+                <div class="dash-stat metar-stat">
+                    <div class="dash-stat-icon weather" id="metarIcon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <div class="dash-stat-content">
+                        <span class="dash-stat-value" id="metarCondition">VFR</span>
+                        <span class="dash-stat-label">KAUO Conditions</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Schedule -->
+            <div class="tab-content active" id="scheduleTab">
+                <!-- Main Dashboard Grid -->
+                <div class="dashboard-grid">
+                    <!-- Calendar Section -->
+                    <div class="calendar-section">
+                        <div class="section-card">
+                            <div class="card-header-bar">
+                                <h3><i class="fas fa-calendar-alt"></i> Flight Schedule</h3>
+                                <div class="calendar-nav">
+                                    <button class="cal-nav-btn" onclick="prevWeek()">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <span id="currentWeek">February 19 - 25, 2024</span>
+                                    <button class="cal-nav-btn" onclick="nextWeek()">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- 24-Hour Calendar Grid -->
+                            <div class="calendar-wrapper">
+                                <div class="calendar-grid-24" id="calendarGrid">
+                                    <!-- Generated by JavaScript -->
+                                </div>
+                            </div>
+
+                            <!-- Calendar Legend -->
+                            <div class="calendar-legend">
+                                <div class="legend-item">
+                                    <span class="legend-color available"></span>
+                                    <span>Available</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color mine"></span>
+                                    <span>Your Booking</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color other"></span>
+                                    <span>Booked</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color unavailable"></span>
+                                    <span>Unavailable</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="sidebar-section">
+                        <!-- METAR Weather -->
+                        <div class="section-card metar-card">
+                            <h3><i class="fas fa-satellite-dish"></i> Live METAR - KAUO</h3>
+                            <div class="metar-display" id="metarDisplay">
+                                <div class="metar-raw" id="metarRaw">
+                                    KAUO 201853Z AUTO 18008KT 10SM CLR 20/12 A3002 RMK AO2
+                                </div>
+                                <div class="metar-decoded">
+                                    <div class="metar-row">
+                                        <div class="metar-item">
+                                            <i class="fas fa-clock"></i>
+                                            <span class="metar-label">Time</span>
+                                            <span class="metar-value" id="metarTime">18:53Z</span>
+                                        </div>
+                                        <div class="metar-item">
+                                            <i class="fas fa-wind"></i>
+                                            <span class="metar-label">Wind</span>
+                                            <span class="metar-value" id="metarWind">180° @ 8 KT</span>
+                                        </div>
+                                    </div>
+                                    <div class="metar-row">
+                                        <div class="metar-item">
+                                            <i class="fas fa-eye"></i>
+                                            <span class="metar-label">Visibility</span>
+                                            <span class="metar-value" id="metarVis">10+ SM</span>
+                                        </div>
+                                        <div class="metar-item">
+                                            <i class="fas fa-cloud"></i>
+                                            <span class="metar-label">Ceiling</span>
+                                            <span class="metar-value" id="metarCeiling">Clear</span>
+                                        </div>
+                                    </div>
+                                    <div class="metar-row">
+                                        <div class="metar-item">
+                                            <i class="fas fa-thermometer-half"></i>
+                                            <span class="metar-label">Temp/Dew</span>
+                                            <span class="metar-value" id="metarTemp">20°C / 12°C</span>
+                                        </div>
+                                        <div class="metar-item">
+                                            <i class="fas fa-tachometer-alt"></i>
+                                            <span class="metar-label">Altimeter</span>
+                                            <span class="metar-value" id="metarAlt">30.02"</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="metar-flight-cat" id="metarFlightCat">
+                                    <span class="flight-cat vfr">VFR</span>
+                                    <span class="flight-cat-desc">Visual Flight Rules - Good conditions for flight training</span>
+                                </div>
+                            </div>
+                            <button class="metar-refresh" onclick="refreshMetar()">
+                                <i class="fas fa-sync-alt"></i> Refresh METAR
+                            </button>
+                        </div>
+
+                        <!-- Aircraft Info -->
+                        <div class="section-card">
+                            <h3><i class="fas fa-plane"></i> Aircraft</h3>
+                            <div class="aircraft-info-card">
+                                <div class="aircraft-image">
+                                    <i class="fas fa-plane"></i>
+                                </div>
+                                <div class="aircraft-details">
+                                    <h4>Cirrus SR20</h4>
+                                    <span class="aircraft-reg">N-CFAA</span>
+                                    <div class="aircraft-status available">
+                                        <i class="fas fa-check-circle"></i>
+                                        Available
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="aircraft-specs-mini">
+                                <div class="spec-mini">
+                                    <span class="spec-label">Hobbs</span>
+                                    <span class="spec-value">1,245.6</span>
+                                </div>
+                                <div class="spec-mini">
+                                    <span class="spec-label">Tach</span>
+                                    <span class="spec-value">1,102.3</span>
+                                </div>
+                                <div class="spec-mini">
+                                    <span class="spec-label">Fuel</span>
+                                    <span class="spec-value">Full</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Instructors -->
+                        <div class="section-card">
+                            <h3><i class="fas fa-chalkboard-teacher"></i> Instructors</h3>
+                            <div class="instructor-list" id="instructorList">
+                                <!-- Generated by JavaScript -->
+                            </div>
+                        </div>
+
+                        <!-- Upcoming Flights -->
+                        <div class="section-card">
+                            <h3><i class="fas fa-clock"></i> Upcoming Flights</h3>
+                            <div class="upcoming-list" id="upcomingList">
+                                <!-- Generated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: User Management (Admin Only) -->
+            <div class="tab-content" id="usersTab">
+                <div class="users-management">
+                    <div class="users-header">
+                        <h3><i class="fas fa-users"></i> User Management</h3>
+                        <button class="btn btn-primary" onclick="openAddUserModal()">
+                            <i class="fas fa-plus"></i> Add User
+                        </button>
+                    </div>
+
+                    <!-- User Type Filters -->
+                    <div class="user-filters">
+                        <button class="filter-btn active" data-filter="all" onclick="filterUsers('all')">All Users</button>
+                        <button class="filter-btn" data-filter="student" onclick="filterUsers('student')">Students</button>
+                        <button class="filter-btn" data-filter="instructor" onclick="filterUsers('instructor')">Instructors</button>
+                        <button class="filter-btn" data-filter="admin" onclick="filterUsers('admin')">Admins</button>
+                    </div>
+
+                    <!-- Users Table -->
+                    <div class="users-table-wrapper">
+                        <table class="users-table" id="usersTable">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Role</th>
+                                    <th>Email</th>
+                                    <th>Status</th>
+                                    <th>Hours</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usersTableBody">
+                                <!-- Generated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Documents (Admin/Instructor view student docs) -->
+            <div class="tab-content" id="documentsTab">
+                <div class="documents-management">
+                    <div class="documents-header">
+                        <h3><i class="fas fa-folder-open"></i> Student Documents</h3>
+                        <div class="doc-search">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search students..." id="docSearchInput" oninput="searchStudentDocs()">
+                        </div>
+                    </div>
+
+                    <!-- Student Document Cards -->
+                    <div class="student-docs-grid" id="studentDocsGrid">
+                        <!-- Generated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- My Documents (Student View) -->
+            <div class="section-card my-documents" id="myDocuments" style="display: none;">
+                <h3><i class="fas fa-folder"></i> My Documents</h3>
+                <div class="documents-list" id="myDocumentsList">
+                    <!-- Generated by JavaScript -->
+                </div>
+                <button class="btn btn-secondary btn-sm" onclick="openUploadModal()" id="uploadDocBtn" style="display: none;">
+                    <i class="fas fa-upload"></i> Upload Document
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal booking-modal">
+            <button class="modal-close" onclick="closeBookingModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-content">
+                <h2><i class="fas fa-calendar-plus"></i> Book Flight</h2>
+                <form id="bookingForm">
+                    <div class="booking-summary">
+                        <div class="summary-item">
+                            <i class="fas fa-calendar"></i>
+                            <span id="bookingDate">Wednesday, February 21</span>
+                        </div>
+                        <div class="summary-item">
+                            <i class="fas fa-clock"></i>
+                            <span id="bookingTime">10:00 AM</span>
+                        </div>
+                    </div>
+
+                    <!-- Student selector (for instructors/admin) -->
+                    <div class="form-group" id="studentSelectGroup" style="display: none;">
+                        <label for="studentSelect">Student</label>
+                        <select id="studentSelect" name="studentSelect">
+                            <option value="">Select a student...</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="flightType">Flight Type</label>
+                        <select id="flightType" name="flightType">
+                            <option value="dual">Dual Instruction</option>
+                            <option value="solo">Solo Flight</option>
+                            <option value="ground">Ground Lesson</option>
+                            <option value="checkride">Stage Check / Checkride</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="instructor">Instructor</label>
+                        <select id="instructor" name="instructor">
+                            <option value="jd">John Davis (CFI, CFII, MEI)</option>
+                            <option value="sm">Sarah Mitchell (CFI, CFII)</option>
+                            <option value="none">No Instructor (Solo)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="duration">Duration</label>
+                        <select id="duration" name="duration">
+                            <option value="1">1 Hour</option>
+                            <option value="1.5">1.5 Hours</option>
+                            <option value="2" selected>2 Hours</option>
+                            <option value="2.5">2.5 Hours</option>
+                            <option value="3">3 Hours</option>
+                            <option value="4">4 Hours</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Notes (Optional)</label>
+                        <textarea id="notes" name="notes" rows="3" placeholder="Any specific objectives or requests..."></textarea>
+                    </div>
+
+                    <div class="booking-estimate">
+                        <span>Estimated Cost:</span>
+                        <strong id="bookingEstimate">$380 - $420</strong>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span>Confirm Booking</span>
+                        <i class="fas fa-check"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add User Modal -->
+    <div class="modal-overlay" id="addUserModal">
+        <div class="modal user-modal">
+            <button class="modal-close" onclick="closeAddUserModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-content">
+                <h2><i class="fas fa-user-plus"></i> Add New User</h2>
+                <form id="addUserForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="newFirstName">First Name</label>
+                            <input type="text" id="newFirstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newLastName">Last Name</label>
+                            <input type="text" id="newLastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newEmail">Email</label>
+                        <input type="email" id="newEmail" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newPhone">Phone</label>
+                        <input type="tel" id="newPhone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newRole">Role</label>
+                        <select id="newRole" name="role" required onchange="toggleRoleFields()">
+                            <option value="student">Student</option>
+                            <option value="instructor">Instructor</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+
+                    <!-- Student-specific fields -->
+                    <div id="studentFields">
+                        <div class="form-group">
+                            <label for="assignedInstructor">Assigned Instructor</label>
+                            <select id="assignedInstructor" name="assignedInstructor">
+                                <option value="jd">John Davis</option>
+                                <option value="sm">Sarah Mitchell</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="trainingProgram">Training Program</label>
+                            <select id="trainingProgram" name="trainingProgram">
+                                <option value="private">Private Pilot</option>
+                                <option value="instrument">Instrument Rating</option>
+                                <option value="commercial">Commercial Pilot</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Instructor-specific fields -->
+                    <div id="instructorFields" style="display: none;">
+                        <div class="form-group">
+                            <label for="certificates">Certificates (comma separated)</label>
+                            <input type="text" id="certificates" name="certificates" placeholder="CFI, CFII, MEI">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newUsername">Username</label>
+                        <input type="text" id="newUsername" name="username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newPassword">Temporary Password</label>
+                        <input type="text" id="newPassword" name="password" required value="Welcome123!">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span>Create User</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- View User/Student Profile Modal -->
+    <div class="modal-overlay" id="userProfileModal">
+        <div class="modal profile-modal">
+            <button class="modal-close" onclick="closeUserProfileModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-content">
+                <div class="profile-header">
+                    <div class="profile-avatar" id="profileAvatar">JD</div>
+                    <div class="profile-info">
+                        <h2 id="profileName">John Doe</h2>
+                        <span class="role-badge" id="profileRole">STUDENT</span>
+                        <p id="profileEmail">john.doe@email.com</p>
+                    </div>
+                </div>
+
+                <div class="profile-stats">
+                    <div class="profile-stat">
+                        <span class="stat-value" id="profileHours">28.5</span>
+                        <span class="stat-label">Flight Hours</span>
+                    </div>
+                    <div class="profile-stat">
+                        <span class="stat-value" id="profileFlights">42</span>
+                        <span class="stat-label">Total Flights</span>
+                    </div>
+                    <div class="profile-stat">
+                        <span class="stat-value" id="profilePhase">Phase 3</span>
+                        <span class="stat-label">Training</span>
+                    </div>
+                </div>
+
+                <!-- Documents Section -->
+                <div class="profile-documents">
+                    <div class="docs-header">
+                        <h3><i class="fas fa-folder"></i> Documents</h3>
+                        <button class="btn btn-secondary btn-sm" onclick="uploadDocumentFor()" id="uploadForBtn">
+                            <i class="fas fa-upload"></i> Upload
+                        </button>
+                    </div>
+                    <div class="docs-list" id="profileDocsList">
+                        <!-- Generated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upload Document Modal -->
+    <div class="modal-overlay" id="uploadDocModal">
+        <div class="modal upload-modal">
+            <button class="modal-close" onclick="closeUploadModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-content">
+                <h2><i class="fas fa-upload"></i> Upload Document</h2>
+                <form id="uploadDocForm">
+                    <div class="form-group">
+                        <label for="docType">Document Type</label>
+                        <select id="docType" name="docType" required>
+                            <option value="">Select type...</option>
+                            <option value="medical">Medical Certificate</option>
+                            <option value="license">Student Pilot Certificate</option>
+                            <option value="written">Written Exam Results</option>
+                            <option value="endorsement">Endorsement</option>
+                            <option value="logbook">Logbook Page</option>
+                            <option value="insurance">Insurance</option>
+                            <option value="id">Government ID</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="docName">Document Name</label>
+                        <input type="text" id="docName" name="docName" placeholder="e.g., Third Class Medical 2024">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="docExpiry">Expiration Date (if applicable)</label>
+                        <input type="date" id="docExpiry" name="docExpiry">
+                    </div>
+
+                    <div class="upload-zone" id="uploadZone">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drag & drop file here or click to browse</p>
+                        <span>PDF, JPG, PNG up to 10MB</span>
+                        <input type="file" id="docFile" name="docFile" accept=".pdf,.jpg,.jpeg,.png" hidden>
+                    </div>
+                    <div class="selected-file" id="selectedFile" style="display: none;">
+                        <i class="fas fa-file"></i>
+                        <span id="selectedFileName"></span>
+                        <button type="button" onclick="clearSelectedFile()"><i class="fas fa-times"></i></button>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span>Upload Document</span>
+                        <i class="fas fa-upload"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer portal-footer">
+        <div class="container">
+            <div class="footer-simple">
+                <p>&copy; 2024 Cirrus Flight Academy Auburn. All rights reserved.</p>
+                <div class="footer-links-inline">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#contact">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/calendar.js"></script>
+</body>
+</html>
