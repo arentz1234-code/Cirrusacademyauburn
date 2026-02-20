@@ -1593,7 +1593,11 @@
     color: var(--gold);
 }
 
-/* Responsive */
+/* ================================
+   RESPONSIVE - STUDENT PORTAL
+================================ */
+
+/* Tablet (1200px and below) */
 @media (max-width: 1200px) {
     .dashboard-grid {
         grid-template-columns: 1fr;
@@ -1610,72 +1614,469 @@
     }
 }
 
+/* Mobile (768px and below) */
 @media (max-width: 768px) {
+    /* Portal Header */
+    .portal-header {
+        padding: 100px 0 30px;
+    }
+
+    .portal-welcome h1 {
+        font-size: clamp(24px, 6vw, 36px);
+    }
+
+    .portal-welcome p {
+        font-size: 15px;
+    }
+
+    /* Demo Banner */
+    .demo-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .demo-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+
+    .demo-credentials-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .demo-role {
+        padding: 10px;
+    }
+
+    /* Login Section */
+    .login-section {
+        padding: 40px 0 60px;
+    }
+
     .login-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
+    }
+
+    .login-info h2 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .login-info > p {
+        text-align: center;
     }
 
     .login-features {
         grid-template-columns: 1fr;
     }
 
-    .dashboard-stats {
-        grid-template-columns: repeat(2, 1fr);
+    .login-form-wrapper {
+        padding: 25px 20px;
     }
 
-    .sidebar-section {
-        grid-template-columns: 1fr;
-    }
-
-    .demo-banner {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .demo-credentials-grid {
-        grid-template-columns: 1fr;
-    }
-
+    /* User Header */
     .user-header {
         flex-direction: column;
         text-align: center;
+        gap: 15px;
     }
 
     .user-info {
         flex-direction: column;
+        gap: 15px;
     }
 
+    .user-avatar {
+        margin: 0 auto;
+    }
+
+    /* Dashboard Stats */
+    .dashboard-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .dash-stat {
+        padding: 18px 15px;
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .dash-stat-value {
+        font-size: 24px;
+    }
+
+    .dash-stat-label {
+        font-size: 11px;
+    }
+
+    /* Dashboard Tabs */
     .dashboard-tabs {
         width: 100%;
         overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 5px;
+        gap: 5px;
     }
 
-    .footer-simple {
+    .tab-btn {
+        padding: 10px 15px;
+        font-size: 12px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .tab-btn i {
+        font-size: 14px;
+    }
+
+    /* Sidebar Section */
+    .sidebar-section {
+        grid-template-columns: 1fr;
+    }
+
+    /* Section Cards */
+    .section-card {
+        padding: 20px 15px;
+    }
+
+    .card-header-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Calendar Navigation */
+    .calendar-nav {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .calendar-nav span {
+        min-width: auto;
+        font-size: 13px;
+    }
+
+    .cal-nav-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Calendar Grid - Scrollable */
+    .calendar-wrapper {
+        margin: 0 -15px;
+        padding: 0 15px;
+    }
+
+    .calendar-grid-24 {
+        min-width: 600px;
+        font-size: 12px;
+    }
+
+    .time-slot-24 {
+        height: 25px;
+        font-size: 9px;
+    }
+
+    .slot-24 {
+        height: 25px;
+    }
+
+    .slot-24 .booking-label {
+        font-size: 7px;
+    }
+
+    .day-header {
+        height: 40px;
+    }
+
+    .day-name {
+        font-size: 9px;
+    }
+
+    .day-date {
+        font-size: 14px;
+    }
+
+    /* Calendar Legend */
+    .calendar-legend {
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .legend-item {
+        font-size: 11px;
+    }
+
+    .legend-color {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* METAR Card */
+    .metar-raw {
+        font-size: 10px;
+        padding: 10px;
+    }
+
+    .metar-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .metar-item {
+        padding: 8px;
+    }
+
+    .metar-value {
+        font-size: 13px;
+    }
+
+    /* Aircraft Info Card */
+    .aircraft-info-card {
         flex-direction: column;
         text-align: center;
+        gap: 15px;
+    }
+
+    .aircraft-specs-mini {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .spec-mini {
+        padding: 10px 8px;
+    }
+
+    .spec-mini .spec-value {
+        font-size: 13px;
+    }
+
+    /* Instructor List */
+    .instructor-item {
+        padding: 10px;
+    }
+
+    .instructor-avatar {
+        width: 35px;
+        height: 35px;
+        font-size: 12px;
+    }
+
+    .instructor-info strong {
+        font-size: 13px;
+    }
+
+    .instructor-status {
+        font-size: 10px;
+        padding: 3px 8px;
+    }
+
+    /* Upcoming List */
+    .upcoming-item {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .upcoming-date .day {
+        font-size: 20px;
+    }
+
+    .upcoming-details strong {
+        font-size: 13px;
+    }
+
+    /* Users Management */
+    .users-management {
+        padding: 20px 15px;
+    }
+
+    .users-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .user-filters {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 5px;
+    }
+
+    .filter-btn {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    /* Users Table - Scrollable */
+    .users-table-wrapper {
+        margin: 0 -15px;
+        padding: 0 15px;
+    }
+
+    .users-table {
+        min-width: 500px;
+    }
+
+    .users-table th,
+    .users-table td {
+        padding: 12px 10px;
+        font-size: 12px;
+    }
+
+    .action-btn {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Documents */
+    .documents-management {
+        padding: 20px 15px;
+    }
+
+    .documents-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .doc-search {
+        width: 100%;
+    }
+
+    .doc-search input {
+        width: 100%;
     }
 
     .student-docs-grid {
         grid-template-columns: 1fr;
     }
 
+    .doc-item {
+        padding: 12px;
+        flex-wrap: wrap;
+    }
+
+    .doc-actions {
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: 10px;
+    }
+
+    /* Profile Modal */
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
     .profile-stats {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .profile-stat {
+        padding: 12px 8px;
+    }
+
+    .profile-stat .stat-value {
+        font-size: 20px;
+    }
+
+    /* Footer */
+    .footer-simple {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .footer-links-inline {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
     }
 }
 
+/* Small Mobile (480px and below) */
 @media (max-width: 480px) {
+    /* Dashboard Stats */
     .dashboard-stats {
         grid-template-columns: 1fr;
     }
 
-    .calendar-nav span {
-        min-width: auto;
-        font-size: 12px;
+    .dash-stat {
+        flex-direction: row;
+        text-align: left;
+        gap: 15px;
     }
 
-    .metar-row {
+    /* Profile Stats */
+    .profile-stats {
         grid-template-columns: 1fr;
+    }
+
+    /* Aircraft Specs */
+    .aircraft-specs-mini {
+        grid-template-columns: 1fr;
+    }
+
+    /* Calendar smaller */
+    .calendar-grid-24 {
+        min-width: 500px;
+    }
+
+    .time-slot-24,
+    .slot-24 {
+        height: 22px;
+    }
+
+    /* Form inputs - prevent iOS zoom */
+    input, select, textarea {
+        font-size: 16px !important;
+    }
+}
+
+/* Touch device optimizations for portal */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets */
+    .tab-btn {
+        min-height: 44px;
+    }
+
+    .cal-nav-btn {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .action-btn {
+        min-width: 40px;
+        min-height: 40px;
+    }
+
+    .filter-btn {
+        min-height: 40px;
+    }
+
+    .slot-24 {
+        min-height: 30px;
+    }
+
+    /* Remove hover transforms */
+    .dash-stat:hover,
+    .student-doc-card:hover {
+        transform: none;
+    }
+}
+
+/* iOS safe area support for portal */
+@supports (padding: max(0px)) {
+    .portal-header {
+        padding-top: max(120px, calc(env(safe-area-inset-top) + 100px));
+    }
+
+    .portal-footer {
+        padding-bottom: max(30px, env(safe-area-inset-bottom));
     }
 }

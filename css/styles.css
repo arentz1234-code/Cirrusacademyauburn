@@ -2308,7 +2308,13 @@ h1, h2, h3, h4, h5, h6 {
 /* ================================
    RESPONSIVE
 ================================ */
+
+/* Tablet (1024px and below) */
 @media (max-width: 1024px) {
+    :root {
+        --section-padding: 80px 0;
+    }
+
     .about-grid,
     .caps-content,
     .contact-grid {
@@ -2330,24 +2336,64 @@ h1, h2, h3, h4, h5, h6 {
     .footer-grid {
         grid-template-columns: 1fr 1fr;
     }
+
+    /* Aircraft specs - 2x3 grid on tablet */
+    .aircraft-specs {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Modal padding */
+    .modal-content {
+        padding: 30px;
+    }
 }
 
+/* Mobile (768px and below) */
 @media (max-width: 768px) {
+    :root {
+        --section-padding: 60px 0;
+    }
+
+    /* Container padding */
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Navigation */
     .nav-links {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 300px;
+        width: 100%;
+        max-width: 300px;
         height: 100vh;
+        height: 100dvh; /* Dynamic viewport height for mobile */
         background: var(--navy-dark);
         flex-direction: column;
         justify-content: center;
-        padding: 40px;
+        padding: 40px 30px;
         transition: var(--transition-medium);
+        z-index: 1000;
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
     }
 
     .nav-links.active {
         right: 0;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+        display: block;
+        padding: 10px 0;
+    }
+
+    .nav-btn {
+        margin-top: 20px;
+        text-align: center;
     }
 
     .hamburger {
@@ -2367,6 +2413,56 @@ h1, h2, h3, h4, h5, h6 {
         transform: rotate(-45deg) translate(5px, -5px);
     }
 
+    /* Logo text */
+    .logo-main {
+        font-size: 12px;
+    }
+
+    .logo-sub {
+        font-size: 10px;
+    }
+
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 100px 15px 50px;
+        min-height: auto;
+    }
+
+    .hero-badge {
+        font-size: 11px;
+        padding: 8px 15px;
+        margin-bottom: 20px;
+    }
+
+    .hero-title {
+        font-size: clamp(28px, 8vw, 40px);
+        margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+        font-size: 15px;
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 40px;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 25px;
+    }
+
     .hero-stats {
         flex-direction: column;
         gap: 20px;
@@ -2377,8 +2473,260 @@ h1, h2, h3, h4, h5, h6 {
         height: 1px;
     }
 
-    .form-row {
+    .stat-number {
+        font-size: 28px;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+
+    /* Section Headers */
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .section-title {
+        font-size: clamp(26px, 6vw, 36px);
+    }
+
+    .section-desc {
+        font-size: 15px;
+        padding: 0 10px;
+    }
+
+    /* About Section */
+    .about-lead {
+        font-size: 16px;
+    }
+
+    .feature {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .feature-icon {
+        margin: 0 auto;
+    }
+
+    /* Aircraft Card */
+    .aircraft-card {
+        padding: 25px 20px;
+    }
+
+    .aircraft-card h3 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .aircraft-specs {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .spec {
+        padding: 12px 8px;
+    }
+
+    .spec-value {
+        font-size: 18px;
+    }
+
+    .spec-label {
+        font-size: 9px;
+    }
+
+    .aircraft-highlight {
+        padding: 12px 15px;
+        font-size: 13px;
+    }
+
+    .aircraft-highlight i {
+        font-size: 20px;
+    }
+
+    /* Training Tabs - already has mobile styles, enhance them */
+    .rating-tabs {
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .rating-tab {
+        padding: 12px 15px;
+        font-size: 13px;
+        gap: 8px;
+    }
+
+    .rating-tab i {
+        font-size: 14px;
+    }
+
+    .prepay-banner {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .prepay-banner i {
+        font-size: 28px;
+    }
+
+    .prepay-banner-text h3 {
+        font-size: 18px;
+    }
+
+    .prepay-banner-text p {
+        font-size: 13px;
+    }
+
+    .prepay-banner-badge {
+        font-size: 12px;
+        padding: 10px 20px;
+    }
+
+    /* Panel content */
+    .panel-header h3 {
+        font-size: 22px;
+    }
+
+    .prepay-card {
+        max-width: 100%;
+    }
+
+    .prepay-price .amount {
+        font-size: 36px;
+    }
+
+    .phase-content {
+        padding: 15px;
+    }
+
+    .phase-header h4 {
+        font-size: 14px;
+    }
+
+    .phase-topics span {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+
+    /* CAPS Section */
+    .caps-animation-container {
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .altitude-indicator {
+        top: 8px;
+        right: 8px;
+        padding: 6px 12px;
+    }
+
+    .alt-label {
+        font-size: 8px;
+    }
+
+    .alt-value {
+        font-size: 16px;
+    }
+
+    .caps-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .caps-play-btn,
+    .caps-reset-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 25px;
+    }
+
+    .caps-timeline {
+        padding: 12px;
+        gap: 0;
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .timeline-step {
+        padding: 0 8px;
+        min-width: 60px;
+    }
+
+    .timeline-step span {
+        font-size: 9px;
+    }
+
+    .timeline-dot {
+        width: 16px;
+        height: 16px;
+    }
+
+    .timeline-connector {
+        width: 20px;
+    }
+
+    .caps-stats-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 40px;
+    }
+
+    .caps-stat-card {
+        padding: 25px 20px;
+    }
+
+    .caps-stat-card.highlight {
+        grid-column: span 1;
+    }
+
+    .stat-big-number {
+        font-size: 36px;
+    }
+
+    .caps-stat-card.highlight .stat-big-number {
+        font-size: 48px;
+    }
+
+    .caps-info-section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .caps-info-card {
+        padding: 20px;
+    }
+
+    /* Pricing Section */
+    .pricing-grid {
+        gap: 20px;
+    }
+
+    .pricing-card {
+        margin: 0;
+    }
+
+    .pricing-header {
+        padding: 30px 20px 25px;
+    }
+
+    .pricing-header h3 {
+        font-size: 24px;
+    }
+
+    .pricing-amount .price {
+        font-size: 40px;
+    }
+
+    .pricing-body {
+        padding: 25px 20px;
+    }
+
+    .bundle-offer {
+        padding: 25px 20px;
     }
 
     .bundle-content {
@@ -2386,9 +2734,43 @@ h1, h2, h3, h4, h5, h6 {
         text-align: center;
     }
 
+    .bundle-text {
+        min-width: auto;
+    }
+
+    .bundle-amount {
+        font-size: 30px;
+    }
+
+    /* Contact Section */
+    .contact-grid {
+        gap: 40px;
+    }
+
+    .contact-form-wrapper {
+        padding: 25px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .portal-btn {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 40px 0 25px;
+    }
+
     .footer-grid {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 30px;
     }
 
     .footer-brand {
@@ -2397,7 +2779,221 @@ h1, h2, h3, h4, h5, h6 {
         align-items: center;
     }
 
+    .footer-brand p {
+        max-width: 100%;
+    }
+
     .social-links {
         justify-content: center;
+    }
+
+    .footer-bottom {
+        padding-top: 20px;
+    }
+
+    /* Modal */
+    .modal-overlay {
+        padding: 15px;
+        align-items: flex-start;
+        padding-top: 60px;
+    }
+
+    .modal {
+        max-height: calc(100vh - 80px);
+        max-height: calc(100dvh - 80px);
+        border-radius: 15px;
+    }
+
+    .modal-content {
+        padding: 25px 20px;
+    }
+
+    .modal-close {
+        top: 15px;
+        right: 15px;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 12px;
+    }
+
+    /* Hero */
+    .hero-badge {
+        font-size: 10px;
+        padding: 6px 12px;
+    }
+
+    .hero-title {
+        font-size: 26px;
+    }
+
+    /* Aircraft specs - single column on very small screens */
+    .aircraft-specs {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Stats */
+    .stat-number {
+        font-size: 24px;
+    }
+
+    .stat-label {
+        font-size: 11px;
+    }
+
+    /* Tabs */
+    .rating-tab {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    /* Prepay card */
+    .prepay-price .amount {
+        font-size: 32px;
+    }
+
+    .prepay-includes li {
+        font-size: 13px;
+    }
+
+    /* Curriculum */
+    .curriculum-timeline {
+        padding-left: 20px;
+    }
+
+    .phase-marker {
+        left: -20px;
+        width: 14px;
+        height: 14px;
+        font-size: 8px;
+    }
+
+    .curriculum-phase.milestone .phase-marker {
+        left: -22px;
+        width: 18px;
+        height: 18px;
+    }
+
+    .phase-content {
+        padding: 12px;
+    }
+
+    .phase-topics span {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
+    /* CAPS stats */
+    .stat-big-number {
+        font-size: 32px;
+    }
+
+    .caps-stat-card.highlight .stat-big-number {
+        font-size: 40px;
+    }
+
+    /* Pricing */
+    .pricing-amount .price {
+        font-size: 36px;
+    }
+
+    /* Contact */
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .contact-item i {
+        margin: 0 auto;
+    }
+
+    /* Form inputs */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px;
+        font-size: 16px; /* Prevents iOS zoom */
+    }
+}
+
+/* Landscape orientation fixes */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 80px 20px 40px;
+    }
+
+    .hero-cta {
+        flex-direction: row;
+    }
+
+    .btn {
+        width: auto;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+
+    .nav-links {
+        padding: 20px;
+        overflow-y: auto;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets */
+    .btn {
+        min-height: 48px;
+    }
+
+    .rating-tab {
+        min-height: 48px;
+    }
+
+    .nav-links a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Remove hover effects that don't work well on touch */
+    .rating-card:hover,
+    .pricing-card:hover,
+    .caps-stat-card:hover {
+        transform: none;
+    }
+
+    .phase-content:hover {
+        transform: none;
+    }
+
+    /* Better tap feedback */
+    .btn:active,
+    .rating-tab:active {
+        transform: scale(0.98);
+    }
+}
+
+/* iOS safe area support */
+@supports (padding: max(0px)) {
+    .navbar {
+        padding-left: max(20px, env(safe-area-inset-left));
+        padding-right: max(20px, env(safe-area-inset-right));
+    }
+
+    .nav-links {
+        padding-bottom: max(40px, env(safe-area-inset-bottom));
+    }
+
+    .footer {
+        padding-bottom: max(30px, env(safe-area-inset-bottom));
     }
 }
