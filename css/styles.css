@@ -565,31 +565,43 @@ h1, h2, h3, h4, h5, h6 {
 
 .aircraft-specs {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-    margin-bottom: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
 }
 
 .spec {
     text-align: center;
-    padding: 15px;
+    padding: 15px 10px;
     background: rgba(10, 22, 40, 0.5);
     border-radius: 10px;
+    transition: var(--transition-fast);
+}
+
+.spec:hover {
+    background: rgba(10, 22, 40, 0.8);
+    transform: translateY(-2px);
 }
 
 .spec-value {
     display: block;
     font-family: var(--font-display);
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
     color: var(--gold);
 }
 
 .spec-label {
-    font-size: 12px;
+    font-size: 11px;
     color: var(--gray);
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.aircraft-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .aircraft-highlight {
@@ -603,6 +615,16 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--gold);
     font-weight: 600;
     font-size: 14px;
+}
+
+.aircraft-highlight.ac-highlight {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: #3b82f6;
+    color: #60a5fa;
+}
+
+.aircraft-highlight.ac-highlight i {
+    color: #60a5fa;
 }
 
 .aircraft-highlight i {
@@ -1244,6 +1266,480 @@ h1, h2, h3, h4, h5, h6 {
 
     .alt-value {
         font-size: 18px;
+    }
+}
+
+/* ================================
+   TRAINING TABS SECTION
+================================ */
+.prepay-banner {
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    border-radius: 15px;
+    padding: 25px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.prepay-banner i {
+    font-size: 32px;
+    color: var(--navy-dark);
+}
+
+.prepay-banner-text {
+    flex: 1;
+    min-width: 250px;
+}
+
+.prepay-banner-text h3 {
+    font-family: var(--font-primary);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy-dark);
+    margin-bottom: 5px;
+}
+
+.prepay-banner-text p {
+    font-size: 14px;
+    color: var(--navy);
+}
+
+.prepay-banner-badge {
+    background: var(--navy-dark);
+    color: var(--gold);
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* Rating Tabs */
+.rating-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 40px;
+    background: rgba(10, 22, 40, 0.5);
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.rating-tab {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 25px;
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    color: var(--gray);
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-medium);
+}
+
+.rating-tab:hover {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.rating-tab.active {
+    background: var(--gold);
+    color: var(--navy-dark);
+    border-color: var(--gold);
+}
+
+.rating-tab i {
+    font-size: 16px;
+}
+
+/* Rating Panels */
+.rating-panels {
+    position: relative;
+}
+
+.rating-panel {
+    display: none;
+    animation: fadeInPanel 0.4s ease;
+}
+
+.rating-panel.active {
+    display: block;
+}
+
+@keyframes fadeInPanel {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.panel-grid {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.panel-info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.panel-header h3 {
+    font-size: 28px;
+    margin: 0;
+}
+
+.panel-badge {
+    background: var(--gold);
+    color: var(--navy-dark);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+/* Prepay Card */
+.prepay-card {
+    background: linear-gradient(145deg, var(--navy-light), var(--navy));
+    border: 2px solid var(--gold);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.prepay-header {
+    background: rgba(201, 162, 39, 0.15);
+    padding: 20px 25px;
+    text-align: center;
+    border-bottom: 1px solid rgba(201, 162, 39, 0.3);
+}
+
+.prepay-header span {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--gold);
+}
+
+.prepay-price {
+    padding: 25px;
+    text-align: center;
+}
+
+.prepay-price .amount {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 5px;
+}
+
+.prepay-price .note {
+    font-size: 13px;
+    color: var(--gray);
+}
+
+.prepay-includes {
+    padding: 0 25px 25px;
+}
+
+.prepay-includes h4 {
+    font-family: var(--font-primary);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.prepay-includes ul {
+    list-style: none;
+}
+
+.prepay-includes li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.prepay-includes li:last-child {
+    border-bottom: none;
+}
+
+.prepay-includes i {
+    color: var(--gold);
+    font-size: 14px;
+}
+
+.prepay-cta {
+    display: block;
+    text-align: center;
+    padding: 18px;
+    background: var(--gold);
+    color: var(--navy-dark);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    transition: var(--transition-medium);
+}
+
+.prepay-cta:hover {
+    background: var(--gold-light);
+}
+
+/* Requirements Box */
+.requirements-box {
+    background: rgba(26, 54, 93, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px 25px;
+}
+
+.requirements-box h4 {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.requirements-box ul {
+    list-style: none;
+}
+
+.requirements-box li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    font-size: 13px;
+    color: var(--gray-light);
+}
+
+.requirements-box li i {
+    color: var(--gold);
+    margin-top: 3px;
+}
+
+/* Panel Curriculum */
+.panel-curriculum h3 {
+    font-size: 22px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.panel-curriculum h3 i {
+    color: var(--gold);
+}
+
+/* Curriculum Timeline */
+.curriculum-timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.curriculum-timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold), var(--gold-dark));
+}
+
+.curriculum-phase {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.curriculum-phase:last-child {
+    margin-bottom: 0;
+}
+
+.phase-marker {
+    position: absolute;
+    left: -30px;
+    top: 5px;
+    width: 18px;
+    height: 18px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: var(--navy-dark);
+    font-weight: 700;
+    z-index: 1;
+}
+
+.curriculum-phase.milestone .phase-marker {
+    width: 24px;
+    height: 24px;
+    left: -33px;
+    top: 2px;
+    background: linear-gradient(135deg, #4ade80, #22c55e);
+}
+
+.curriculum-phase.milestone .phase-marker i {
+    font-size: 12px;
+    color: white;
+}
+
+.phase-content {
+    background: rgba(26, 54, 93, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px 25px;
+    transition: var(--transition-medium);
+}
+
+.phase-content:hover {
+    border-color: var(--gold);
+    transform: translateX(5px);
+}
+
+.curriculum-phase.milestone .phase-content {
+    background: rgba(74, 222, 128, 0.1);
+    border-color: #4ade80;
+}
+
+.phase-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.phase-header h4 {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.phase-hours {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.phase-badge {
+    background: var(--gold);
+    color: var(--navy-dark);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 15px;
+    letter-spacing: 0.5px;
+}
+
+.curriculum-phase.milestone .phase-badge {
+    background: #4ade80;
+    color: var(--navy-dark);
+}
+
+.phase-topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.phase-topics span {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: var(--gray-light);
+}
+
+.curriculum-phase.milestone .phase-topics span {
+    background: rgba(74, 222, 128, 0.15);
+    color: #4ade80;
+}
+
+/* Responsive Training Tabs */
+@media (max-width: 1024px) {
+    .panel-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-info {
+        order: 2;
+    }
+
+    .panel-curriculum {
+        order: 1;
+    }
+
+    .prepay-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .rating-tabs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .rating-tab {
+        justify-content: center;
+    }
+
+    .prepay-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .curriculum-timeline {
+        padding-left: 25px;
+    }
+
+    .phase-marker {
+        left: -25px;
+    }
+
+    .curriculum-phase.milestone .phase-marker {
+        left: -28px;
     }
 }
 

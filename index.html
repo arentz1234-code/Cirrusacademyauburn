@@ -147,25 +147,39 @@
                             <h3>Cirrus SR20</h3>
                             <div class="aircraft-specs">
                                 <div class="spec">
-                                    <span class="spec-value">200 HP</span>
-                                    <span class="spec-label">Continental Engine</span>
+                                    <span class="spec-value">215 HP</span>
+                                    <span class="spec-label">Continental IO-390</span>
                                 </div>
                                 <div class="spec">
-                                    <span class="spec-value">155 KTAS</span>
+                                    <span class="spec-value">160 KTAS</span>
                                     <span class="spec-label">Cruise Speed</span>
                                 </div>
                                 <div class="spec">
-                                    <span class="spec-value">G1000</span>
-                                    <span class="spec-label">Garmin Avionics</span>
+                                    <span class="spec-value">G1000 NXi</span>
+                                    <span class="spec-label">Perspective Plus</span>
                                 </div>
                                 <div class="spec">
                                     <span class="spec-value">CAPS</span>
                                     <span class="spec-label">Parachute System</span>
                                 </div>
+                                <div class="spec">
+                                    <span class="spec-value">A/C</span>
+                                    <span class="spec-label">Air Conditioning</span>
+                                </div>
+                                <div class="spec">
+                                    <span class="spec-value">Leather</span>
+                                    <span class="spec-label">Interior</span>
+                                </div>
                             </div>
-                            <div class="aircraft-highlight">
-                                <i class="fas fa-parachute-box"></i>
-                                <span>Whole Aircraft Parachute Equipped</span>
+                            <div class="aircraft-highlights">
+                                <div class="aircraft-highlight">
+                                    <i class="fas fa-parachute-box"></i>
+                                    <span>Whole Aircraft Parachute Equipped</span>
+                                </div>
+                                <div class="aircraft-highlight ac-highlight">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>Climate-Controlled Cabin</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -181,90 +195,899 @@
                 <span class="section-tag">TRAINING PROGRAMS</span>
                 <h2 class="section-title">Your Path to the <span class="accent">Skies</span></h2>
                 <p class="section-desc">
-                    Three comprehensive programs designed to take you from first flight to professional pilot.
-                    Click each rating to explore the journey.
+                    Comprehensive flight training programs from first flight to professional pilot.
+                    Prepay and save on your aviation journey.
                 </p>
             </div>
 
-            <!-- Rating Cards -->
-            <div class="rating-cards">
-                <!-- Private Pilot -->
-                <div class="rating-card" data-rating="private">
-                    <div class="card-header">
-                        <div class="card-number">01</div>
-                        <div class="card-icon">
-                            <i class="fas fa-plane-departure"></i>
+            <!-- Prepay Banner -->
+            <div class="prepay-banner">
+                <div class="prepay-icon">
+                    <i class="fas fa-piggy-bank"></i>
+                </div>
+                <div class="prepay-content">
+                    <h3>Prepay & Save Up To 15%</h3>
+                    <p>Lock in your training investment today. Prepay for flight hours and receive priority scheduling, discounted rates, and exclusive benefits.</p>
+                </div>
+                <a href="#contact" class="btn btn-primary">
+                    <span>Get Quote</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- Rating Tabs -->
+            <div class="rating-tabs">
+                <button class="rating-tab active" data-rating="private" onclick="switchRatingTab('private')">
+                    <i class="fas fa-plane-departure"></i>
+                    <span>Private Pilot</span>
+                </button>
+                <button class="rating-tab" data-rating="instrument" onclick="switchRatingTab('instrument')">
+                    <i class="fas fa-cloud-sun"></i>
+                    <span>Instrument</span>
+                </button>
+                <button class="rating-tab" data-rating="commercial" onclick="switchRatingTab('commercial')">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Commercial</span>
+                </button>
+                <button class="rating-tab" data-rating="cfi" onclick="switchRatingTab('cfi')">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>CFI</span>
+                </button>
+                <button class="rating-tab" data-rating="cfii" onclick="switchRatingTab('cfii')">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>CFII</span>
+                </button>
+                <button class="rating-tab" data-rating="addon" onclick="switchRatingTab('addon')">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>SE Add-On</span>
+                </button>
+            </div>
+
+            <!-- Rating Content Panels -->
+            <div class="rating-panels">
+                <!-- Private Pilot Panel -->
+                <div class="rating-panel active" id="panel-private">
+                    <div class="panel-grid">
+                        <div class="panel-info">
+                            <div class="panel-header">
+                                <div class="panel-badge">FOUNDATION</div>
+                                <h3>Private Pilot Certificate</h3>
+                                <p>Your aviation journey begins here. Earn the freedom to fly yourself, family, and friends anywhere in the country under visual flight rules.</p>
+                            </div>
+
+                            <!-- Prepay Pricing -->
+                            <div class="prepay-card">
+                                <div class="prepay-header">
+                                    <span class="prepay-label">PREPAY PACKAGE</span>
+                                    <div class="prepay-price">
+                                        <span class="price-from">from</span>
+                                        <span class="price-amount">$12,500</span>
+                                    </div>
+                                    <span class="prepay-savings">Save $1,500+ vs pay-as-you-go</span>
+                                </div>
+                                <ul class="prepay-includes">
+                                    <li><i class="fas fa-check"></i> 45 flight hours in Cirrus SR20</li>
+                                    <li><i class="fas fa-check"></i> Ground instruction included</li>
+                                    <li><i class="fas fa-check"></i> All training materials</li>
+                                    <li><i class="fas fa-check"></i> Written exam prep course</li>
+                                    <li><i class="fas fa-check"></i> Checkride preparation</li>
+                                    <li><i class="fas fa-check"></i> Priority scheduling</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-primary btn-full">
+                                    <span>Start Training</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+
+                            <div class="requirements-box">
+                                <h4><i class="fas fa-clipboard-list"></i> Requirements</h4>
+                                <ul>
+                                    <li>Be at least 17 years old</li>
+                                    <li>Read, speak, and understand English</li>
+                                    <li>Hold at least a 3rd class medical certificate</li>
+                                    <li>Pass FAA written knowledge exam</li>
+                                    <li>Pass practical (checkride) exam</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="panel-curriculum">
+                            <h4><i class="fas fa-route"></i> Your Training Journey</h4>
+                            <div class="curriculum-timeline">
+                                <div class="curriculum-phase">
+                                    <div class="phase-marker">
+                                        <div class="phase-number">1</div>
+                                        <div class="phase-line"></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Ground School</h5>
+                                            <span class="phase-hours">20-30 hrs</span>
+                                        </div>
+                                        <p>Master aerodynamics, weather, navigation, regulations, and aircraft systems.</p>
+                                        <div class="phase-topics">
+                                            <span>Aerodynamics</span>
+                                            <span>Weather</span>
+                                            <span>Navigation</span>
+                                            <span>FARs</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="curriculum-phase">
+                                    <div class="phase-marker">
+                                        <div class="phase-number">2</div>
+                                        <div class="phase-line"></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Pre-Solo Training</h5>
+                                            <span class="phase-hours">15-20 hrs</span>
+                                        </div>
+                                        <p>Learn basic maneuvers, takeoffs, landings, and emergency procedures.</p>
+                                        <div class="phase-topics">
+                                            <span>Maneuvers</span>
+                                            <span>Landings</span>
+                                            <span>Emergencies</span>
+                                            <span>CAPS</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="curriculum-phase milestone">
+                                    <div class="phase-marker">
+                                        <div class="phase-number"><i class="fas fa-star"></i></div>
+                                        <div class="phase-line"></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>First Solo!</h5>
+                                            <span class="phase-badge">MILESTONE</span>
+                                        </div>
+                                        <p>Your unforgettable moment—flying the aircraft alone for the first time.</p>
+                                    </div>
+                                </div>
+
+                                <div class="curriculum-phase">
+                                    <div class="phase-marker">
+                                        <div class="phase-number">3</div>
+                                        <div class="phase-line"></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Cross-Country</h5>
+                                            <span class="phase-hours">15-20 hrs</span>
+                                        </div>
+                                        <p>Navigate to distant airports, plan flights, manage fuel and weather.</p>
+                                        <div class="phase-topics">
+                                            <span>Flight Planning</span>
+                                            <span>Navigation</span>
+                                            <span>Solo XC</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="curriculum-phase">
+                                    <div class="phase-marker">
+                                        <div class="phase-number">4</div>
+                                        <div class="phase-line"></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Checkride Prep</h5>
+                                            <span class="phase-hours">5-10 hrs</span>
+                                        </div>
+                                        <p>Polish skills, practice oral exam, and prepare for your practical test.</p>
+                                        <div class="phase-topics">
+                                            <span>Review</span>
+                                            <span>Mock Checkride</span>
+                                            <span>Oral Prep</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="curriculum-phase milestone final">
+                                    <div class="phase-marker">
+                                        <div class="phase-number"><i class="fas fa-trophy"></i></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Private Pilot Certificate!</h5>
+                                            <span class="phase-badge success">COMPLETE</span>
+                                        </div>
+                                        <p>Congratulations! You're now a certificated Private Pilot.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <h3 class="card-title">Private Pilot</h3>
-                    <p class="card-desc">Your journey begins here. Learn the fundamentals of flight and earn your wings.</p>
-                    <div class="card-stats">
-                        <div class="card-stat">
-                            <span class="value">40+</span>
-                            <span class="label">Flight Hours</span>
-                        </div>
-                        <div class="card-stat">
-                            <span class="value">4-6</span>
-                            <span class="label">Months</span>
-                        </div>
-                    </div>
-                    <button class="card-expand" onclick="openRatingModal('private')">
-                        <span>Explore Program</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
                 </div>
 
-                <!-- Instrument Rating -->
-                <div class="rating-card featured" data-rating="instrument">
-                    <div class="featured-badge">MOST POPULAR</div>
-                    <div class="card-header">
-                        <div class="card-number">02</div>
-                        <div class="card-icon">
-                            <i class="fas fa-cloud-sun"></i>
+                <!-- Instrument Rating Panel -->
+                <div class="rating-panel" id="panel-instrument">
+                    <div class="panel-grid">
+                        <div class="panel-info">
+                            <div class="panel-header">
+                                <div class="panel-badge">PRECISION</div>
+                                <h3>Instrument Rating</h3>
+                                <p>Master flight by reference to instruments. Fly through clouds, in low visibility, and utilize the full IFR system with confidence.</p>
+                            </div>
+
+                            <div class="prepay-card">
+                                <div class="prepay-header">
+                                    <span class="prepay-label">PREPAY PACKAGE</span>
+                                    <div class="prepay-price">
+                                        <span class="price-from">from</span>
+                                        <span class="price-amount">$14,000</span>
+                                    </div>
+                                    <span class="prepay-savings">Save $1,800+ vs pay-as-you-go</span>
+                                </div>
+                                <ul class="prepay-includes">
+                                    <li><i class="fas fa-check"></i> 40+ instrument flight hours</li>
+                                    <li><i class="fas fa-check"></i> Advanced G1000 NXi training</li>
+                                    <li><i class="fas fa-check"></i> Simulator time included</li>
+                                    <li><i class="fas fa-check"></i> IFR written exam prep</li>
+                                    <li><i class="fas fa-check"></i> Real IMC experience</li>
+                                    <li><i class="fas fa-check"></i> Approach procedure mastery</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-primary btn-full">
+                                    <span>Start Training</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+
+                            <div class="requirements-box">
+                                <h4><i class="fas fa-clipboard-list"></i> Requirements</h4>
+                                <ul>
+                                    <li>Hold a Private Pilot Certificate</li>
+                                    <li>50 hours cross-country PIC time</li>
+                                    <li>40 hours actual or simulated instrument</li>
+                                    <li>Pass FAA instrument written exam</li>
+                                    <li>Pass instrument practical exam</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="panel-curriculum">
+                            <h4><i class="fas fa-route"></i> Your Training Journey</h4>
+                            <div class="curriculum-timeline">
+                                <div class="curriculum-phase">
+                                    <div class="phase-marker">
+                                        <div class="phase-number">1</div>
+                                        <div class="phase-line"></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Instrument Ground</h5>
+                                            <span class="phase-hours">30-40 hrs</span>
+                                        </div>
+                                        <p>Deep dive into IFR procedures, regulations, weather theory, and charts.</p>
+                                        <div class="phase-topics">
+                                            <span>IFR Regs</span>
+                                            <span>Weather</span>
+                                            <span>Charts</span>
+                                            <span>Approaches</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="curriculum-phase">
+                                    <div class="phase-marker">
+                                        <div class="phase-number">2</div>
+                                        <div class="phase-line"></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Basic Attitude Instruments</h5>
+                                            <span class="phase-hours">10-15 hrs</span>
+                                        </div>
+                                        <p>Master full-panel and partial-panel flying using the G1000 NXi.</p>
+                                        <div class="phase-topics">
+                                            <span>Instrument Scan</span>
+                                            <span>Unusual Attitudes</span>
+                                            <span>Partial Panel</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="curriculum-phase">
+                                    <div class="phase-marker">
+                                        <div class="phase-number">3</div>
+                                        <div class="phase-line"></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Navigation & Holds</h5>
+                                            <span class="phase-hours">10-12 hrs</span>
+                                        </div>
+                                        <p>Navigate using GPS, VOR, and master holding patterns.</p>
+                                        <div class="phase-topics">
+                                            <span>GPS Nav</span>
+                                            <span>VOR</span>
+                                            <span>Holds</span>
+                                            <span>Airways</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="curriculum-phase">
+                                    <div class="phase-marker">
+                                        <div class="phase-number">4</div>
+                                        <div class="phase-line"></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Instrument Approaches</h5>
+                                            <span class="phase-hours">12-15 hrs</span>
+                                        </div>
+                                        <p>Master ILS, VOR, RNAV/GPS, and circling approaches.</p>
+                                        <div class="phase-topics">
+                                            <span>ILS</span>
+                                            <span>RNAV GPS</span>
+                                            <span>VOR</span>
+                                            <span>Missed</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="curriculum-phase">
+                                    <div class="phase-marker">
+                                        <div class="phase-number">5</div>
+                                        <div class="phase-line"></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>IFR Cross-Country</h5>
+                                            <span class="phase-hours">8-10 hrs</span>
+                                        </div>
+                                        <p>File IFR, fly in actual IMC, and complete required cross-countries.</p>
+                                        <div class="phase-topics">
+                                            <span>Flight Planning</span>
+                                            <span>Clearances</span>
+                                            <span>Actual IMC</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="curriculum-phase milestone final">
+                                    <div class="phase-marker">
+                                        <div class="phase-number"><i class="fas fa-trophy"></i></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Instrument Rating!</h5>
+                                            <span class="phase-badge success">COMPLETE</span>
+                                        </div>
+                                        <p>You're now an instrument-rated pilot. Fly in the clouds!</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <h3 class="card-title">Instrument Rating</h3>
-                    <p class="card-desc">Master flight by reference to instruments. Fly in clouds and low visibility with confidence.</p>
-                    <div class="card-stats">
-                        <div class="card-stat">
-                            <span class="value">40+</span>
-                            <span class="label">Instrument Hours</span>
-                        </div>
-                        <div class="card-stat">
-                            <span class="value">3-5</span>
-                            <span class="label">Months</span>
-                        </div>
-                    </div>
-                    <button class="card-expand" onclick="openRatingModal('instrument')">
-                        <span>Explore Program</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
                 </div>
 
-                <!-- Commercial Pilot -->
-                <div class="rating-card" data-rating="commercial">
-                    <div class="card-header">
-                        <div class="card-number">03</div>
-                        <div class="card-icon">
-                            <i class="fas fa-user-tie"></i>
+                <!-- Commercial Pilot Panel -->
+                <div class="rating-panel" id="panel-commercial">
+                    <div class="panel-grid">
+                        <div class="panel-info">
+                            <div class="panel-header">
+                                <div class="panel-badge">PROFESSIONAL</div>
+                                <h3>Commercial Pilot Certificate</h3>
+                                <p>Turn your passion into a profession. Earn the privilege to fly for compensation and begin your aviation career.</p>
+                            </div>
+
+                            <div class="prepay-card">
+                                <div class="prepay-header">
+                                    <span class="prepay-label">PREPAY PACKAGE</span>
+                                    <div class="prepay-price">
+                                        <span class="price-from">from</span>
+                                        <span class="price-amount">$28,000</span>
+                                    </div>
+                                    <span class="prepay-savings">Save $3,500+ vs pay-as-you-go</span>
+                                </div>
+                                <ul class="prepay-includes">
+                                    <li><i class="fas fa-check"></i> Build to 250 total hours</li>
+                                    <li><i class="fas fa-check"></i> Commercial maneuvers training</li>
+                                    <li><i class="fas fa-check"></i> Complex/TAA endorsement</li>
+                                    <li><i class="fas fa-check"></i> Long cross-country flights</li>
+                                    <li><i class="fas fa-check"></i> Written exam prep</li>
+                                    <li><i class="fas fa-check"></i> Career pathway guidance</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-primary btn-full">
+                                    <span>Start Training</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+
+                            <div class="requirements-box">
+                                <h4><i class="fas fa-clipboard-list"></i> Requirements</h4>
+                                <ul>
+                                    <li>Be at least 18 years old</li>
+                                    <li>Hold Private Pilot Certificate</li>
+                                    <li>Hold Instrument Rating</li>
+                                    <li>250 hours total flight time</li>
+                                    <li>Pass commercial written & practical</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="panel-curriculum">
+                            <h4><i class="fas fa-route"></i> Your Training Journey</h4>
+                            <div class="curriculum-timeline">
+                                <div class="curriculum-phase">
+                                    <div class="phase-marker">
+                                        <div class="phase-number">1</div>
+                                        <div class="phase-line"></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Commercial Ground</h5>
+                                            <span class="phase-hours">20-30 hrs</span>
+                                        </div>
+                                        <p>Advanced aerodynamics, commercial operations, and regulations.</p>
+                                        <div class="phase-topics">
+                                            <span>Part 91/135</span>
+                                            <span>Performance</span>
+                                            <span>W&B</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="curriculum-phase">
+                                    <div class="phase-marker">
+                                        <div class="phase-number">2</div>
+                                        <div class="phase-line"></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Time Building</h5>
+                                            <span class="phase-hours">100+ hrs</span>
+                                        </div>
+                                        <p>Build PIC time with structured cross-country and solo flights.</p>
+                                        <div class="phase-topics">
+                                            <span>Solo XC</span>
+                                            <span>Night</span>
+                                            <span>Long XC</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="curriculum-phase">
+                                    <div class="phase-marker">
+                                        <div class="phase-number">3</div>
+                                        <div class="phase-line"></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Commercial Maneuvers</h5>
+                                            <span class="phase-hours">15-20 hrs</span>
+                                        </div>
+                                        <p>Master chandelles, lazy 8s, steep spirals, and 8s on pylons.</p>
+                                        <div class="phase-topics">
+                                            <span>Chandelles</span>
+                                            <span>Lazy 8s</span>
+                                            <span>Steep Spirals</span>
+                                            <span>Eights</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="curriculum-phase">
+                                    <div class="phase-marker">
+                                        <div class="phase-number">4</div>
+                                        <div class="phase-line"></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>TAA/Complex Training</h5>
+                                            <span class="phase-hours">10 hrs</span>
+                                        </div>
+                                        <p>Cirrus SR20 qualifies as TAA. Master advanced systems.</p>
+                                        <div class="phase-topics">
+                                            <span>G1000 NXi</span>
+                                            <span>Autopilot</span>
+                                            <span>Systems</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="curriculum-phase milestone final">
+                                    <div class="phase-marker">
+                                        <div class="phase-number"><i class="fas fa-trophy"></i></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Commercial Pilot Certificate!</h5>
+                                            <span class="phase-badge success">COMPLETE</span>
+                                        </div>
+                                        <p>Welcome to professional aviation. You can now fly for hire!</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <h3 class="card-title">Commercial Pilot</h3>
-                    <p class="card-desc">Turn your passion into a profession. Earn the privilege to fly for compensation.</p>
-                    <div class="card-stats">
-                        <div class="card-stat">
-                            <span class="value">250</span>
-                            <span class="label">Total Hours</span>
+                </div>
+
+                <!-- CFI Panel -->
+                <div class="rating-panel" id="panel-cfi">
+                    <div class="panel-grid">
+                        <div class="panel-info">
+                            <div class="panel-header">
+                                <div class="panel-badge">INSTRUCTOR</div>
+                                <h3>Certified Flight Instructor (CFI)</h3>
+                                <p>Share your passion for aviation. Become a flight instructor and help others achieve their dreams while building hours.</p>
+                            </div>
+
+                            <div class="prepay-card">
+                                <div class="prepay-header">
+                                    <span class="prepay-label">PREPAY PACKAGE</span>
+                                    <div class="prepay-price">
+                                        <span class="price-from">from</span>
+                                        <span class="price-amount">$8,500</span>
+                                    </div>
+                                    <span class="prepay-savings">Save $1,000+ vs pay-as-you-go</span>
+                                </div>
+                                <ul class="prepay-includes">
+                                    <li><i class="fas fa-check"></i> 25+ hours dual instruction</li>
+                                    <li><i class="fas fa-check"></i> FOI written exam prep</li>
+                                    <li><i class="fas fa-check"></i> CFI written exam prep</li>
+                                    <li><i class="fas fa-check"></i> Lesson plan development</li>
+                                    <li><i class="fas fa-check"></i> Spin endorsement</li>
+                                    <li><i class="fas fa-check"></i> Checkride preparation</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-primary btn-full">
+                                    <span>Start Training</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+
+                            <div class="requirements-box">
+                                <h4><i class="fas fa-clipboard-list"></i> Requirements</h4>
+                                <ul>
+                                    <li>Hold Commercial Pilot Certificate</li>
+                                    <li>Hold Instrument Rating</li>
+                                    <li>Pass FOI written exam</li>
+                                    <li>Pass CFI written exam</li>
+                                    <li>Log spin training endorsement</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="card-stat">
-                            <span class="value">6-12</span>
-                            <span class="label">Months</span>
+
+                        <div class="panel-curriculum">
+                            <h4><i class="fas fa-route"></i> Your Training Journey</h4>
+                            <div class="curriculum-timeline">
+                                <div class="curriculum-phase">
+                                    <div class="phase-marker">
+                                        <div class="phase-number">1</div>
+                                        <div class="phase-line"></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>FOI & Ground School</h5>
+                                            <span class="phase-hours">40+ hrs</span>
+                                        </div>
+                                        <p>Fundamentals of Instruction and teaching methodology.</p>
+                                        <div class="phase-topics">
+                                            <span>Learning Theory</span>
+                                            <span>Teaching Methods</span>
+                                            <span>Lesson Plans</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="curriculum-phase">
+                                    <div class="phase-marker">
+                                        <div class="phase-number">2</div>
+                                        <div class="phase-line"></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Right Seat Training</h5>
+                                            <span class="phase-hours">15-20 hrs</span>
+                                        </div>
+                                        <p>Learn to fly and teach from the right seat.</p>
+                                        <div class="phase-topics">
+                                            <span>Right Seat</span>
+                                            <span>Demonstrations</span>
+                                            <span>Corrections</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="curriculum-phase">
+                                    <div class="phase-marker">
+                                        <div class="phase-number">3</div>
+                                        <div class="phase-line"></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Spin Training</h5>
+                                            <span class="phase-hours">Required</span>
+                                        </div>
+                                        <p>Spin entry, recognition, and recovery endorsement.</p>
+                                        <div class="phase-topics">
+                                            <span>Spin Entry</span>
+                                            <span>Recovery</span>
+                                            <span>Endorsement</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="curriculum-phase">
+                                    <div class="phase-marker">
+                                        <div class="phase-number">4</div>
+                                        <div class="phase-line"></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Practice Teaching</h5>
+                                            <span class="phase-hours">10-15 hrs</span>
+                                        </div>
+                                        <p>Teach lessons to your instructor, refine your technique.</p>
+                                        <div class="phase-topics">
+                                            <span>Mock Lessons</span>
+                                            <span>Oral Prep</span>
+                                            <span>Scenarios</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="curriculum-phase milestone final">
+                                    <div class="phase-marker">
+                                        <div class="phase-number"><i class="fas fa-trophy"></i></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Certified Flight Instructor!</h5>
+                                            <span class="phase-badge success">COMPLETE</span>
+                                        </div>
+                                        <p>You're now a CFI. Start building hours while helping others fly!</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <button class="card-expand" onclick="openRatingModal('commercial')">
-                        <span>Explore Program</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
+                </div>
+
+                <!-- CFII Panel -->
+                <div class="rating-panel" id="panel-cfii">
+                    <div class="panel-grid">
+                        <div class="panel-info">
+                            <div class="panel-header">
+                                <div class="panel-badge">ADVANCED INSTRUCTOR</div>
+                                <h3>Instrument Flight Instructor (CFII)</h3>
+                                <p>Expand your teaching credentials. Train students for their instrument rating and increase your earning potential.</p>
+                            </div>
+
+                            <div class="prepay-card">
+                                <div class="prepay-header">
+                                    <span class="prepay-label">PREPAY PACKAGE</span>
+                                    <div class="prepay-price">
+                                        <span class="price-from">from</span>
+                                        <span class="price-amount">$5,500</span>
+                                    </div>
+                                    <span class="prepay-savings">Save $700+ vs pay-as-you-go</span>
+                                </div>
+                                <ul class="prepay-includes">
+                                    <li><i class="fas fa-check"></i> 15+ hours dual instruction</li>
+                                    <li><i class="fas fa-check"></i> Instrument teaching techniques</li>
+                                    <li><i class="fas fa-check"></i> Approach instruction methods</li>
+                                    <li><i class="fas fa-check"></i> IFR lesson plans</li>
+                                    <li><i class="fas fa-check"></i> Checkride preparation</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-primary btn-full">
+                                    <span>Start Training</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+
+                            <div class="requirements-box">
+                                <h4><i class="fas fa-clipboard-list"></i> Requirements</h4>
+                                <ul>
+                                    <li>Hold CFI Certificate</li>
+                                    <li>Hold Instrument Rating</li>
+                                    <li>Pass CFII written exam (if required)</li>
+                                    <li>Pass CFII practical exam</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="panel-curriculum">
+                            <h4><i class="fas fa-route"></i> Your Training Journey</h4>
+                            <div class="curriculum-timeline">
+                                <div class="curriculum-phase">
+                                    <div class="phase-marker">
+                                        <div class="phase-number">1</div>
+                                        <div class="phase-line"></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>IFR Teaching Methods</h5>
+                                            <span class="phase-hours">10-15 hrs</span>
+                                        </div>
+                                        <p>Learn to teach instrument procedures effectively.</p>
+                                        <div class="phase-topics">
+                                            <span>Teaching IFR</span>
+                                            <span>Common Errors</span>
+                                            <span>Corrections</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="curriculum-phase">
+                                    <div class="phase-marker">
+                                        <div class="phase-number">2</div>
+                                        <div class="phase-line"></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Approach Instruction</h5>
+                                            <span class="phase-hours">8-10 hrs</span>
+                                        </div>
+                                        <p>Master teaching all types of instrument approaches.</p>
+                                        <div class="phase-topics">
+                                            <span>ILS</span>
+                                            <span>GPS</span>
+                                            <span>VOR</span>
+                                            <span>Holds</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="curriculum-phase">
+                                    <div class="phase-marker">
+                                        <div class="phase-number">3</div>
+                                        <div class="phase-line"></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Practical Preparation</h5>
+                                            <span class="phase-hours">5-8 hrs</span>
+                                        </div>
+                                        <p>Mock checkrides and teaching demonstrations.</p>
+                                        <div class="phase-topics">
+                                            <span>Mock Lessons</span>
+                                            <span>Scenarios</span>
+                                            <span>Oral Prep</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="curriculum-phase milestone final">
+                                    <div class="phase-marker">
+                                        <div class="phase-number"><i class="fas fa-trophy"></i></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Instrument Instructor!</h5>
+                                            <span class="phase-badge success">COMPLETE</span>
+                                        </div>
+                                        <p>You're now a CFII. Train instrument students!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Engine Add-On Panel -->
+                <div class="rating-panel" id="panel-addon">
+                    <div class="panel-grid">
+                        <div class="panel-info">
+                            <div class="panel-header">
+                                <div class="panel-badge">ADD-ON</div>
+                                <h3>Single Engine Add-On</h3>
+                                <p>Already hold a rotorcraft or multi-engine certificate? Add single-engine land privileges to your existing certificate.</p>
+                            </div>
+
+                            <div class="prepay-card">
+                                <div class="prepay-header">
+                                    <span class="prepay-label">PREPAY PACKAGE</span>
+                                    <div class="prepay-price">
+                                        <span class="price-from">from</span>
+                                        <span class="price-amount">$4,500</span>
+                                    </div>
+                                    <span class="prepay-savings">Save $500+ vs pay-as-you-go</span>
+                                </div>
+                                <ul class="prepay-includes">
+                                    <li><i class="fas fa-check"></i> 10-15 flight hours</li>
+                                    <li><i class="fas fa-check"></i> Single-engine transition</li>
+                                    <li><i class="fas fa-check"></i> Cirrus SR20 checkout</li>
+                                    <li><i class="fas fa-check"></i> CAPS training</li>
+                                    <li><i class="fas fa-check"></i> G1000 NXi proficiency</li>
+                                    <li><i class="fas fa-check"></i> Checkride preparation</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-primary btn-full">
+                                    <span>Start Training</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+
+                            <div class="requirements-box">
+                                <h4><i class="fas fa-clipboard-list"></i> Requirements</h4>
+                                <ul>
+                                    <li>Hold pilot certificate (any category)</li>
+                                    <li>Valid medical certificate</li>
+                                    <li>Demonstrate proficiency</li>
+                                    <li>Pass practical exam</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="panel-curriculum">
+                            <h4><i class="fas fa-route"></i> Your Training Journey</h4>
+                            <div class="curriculum-timeline">
+                                <div class="curriculum-phase">
+                                    <div class="phase-marker">
+                                        <div class="phase-number">1</div>
+                                        <div class="phase-line"></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Aircraft Familiarization</h5>
+                                            <span class="phase-hours">3-5 hrs</span>
+                                        </div>
+                                        <p>Learn the Cirrus SR20 systems, G1000 NXi, and CAPS.</p>
+                                        <div class="phase-topics">
+                                            <span>Systems</span>
+                                            <span>G1000</span>
+                                            <span>CAPS</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="curriculum-phase">
+                                    <div class="phase-marker">
+                                        <div class="phase-number">2</div>
+                                        <div class="phase-line"></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Flight Training</h5>
+                                            <span class="phase-hours">8-12 hrs</span>
+                                        </div>
+                                        <p>Maneuvers, takeoffs, landings, and emergency procedures.</p>
+                                        <div class="phase-topics">
+                                            <span>Maneuvers</span>
+                                            <span>Landings</span>
+                                            <span>Emergencies</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="curriculum-phase">
+                                    <div class="phase-marker">
+                                        <div class="phase-number">3</div>
+                                        <div class="phase-line"></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Checkride Prep</h5>
+                                            <span class="phase-hours">2-3 hrs</span>
+                                        </div>
+                                        <p>Final polish and practical test preparation.</p>
+                                        <div class="phase-topics">
+                                            <span>Review</span>
+                                            <span>Mock Checkride</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="curriculum-phase milestone final">
+                                    <div class="phase-marker">
+                                        <div class="phase-number"><i class="fas fa-trophy"></i></div>
+                                    </div>
+                                    <div class="phase-content">
+                                        <div class="phase-header">
+                                            <h5>Single Engine Added!</h5>
+                                            <span class="phase-badge success">COMPLETE</span>
+                                        </div>
+                                        <p>ASEL privileges added to your certificate!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

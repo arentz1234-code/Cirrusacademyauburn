@@ -669,3 +669,41 @@ function initLazyLoading() {
 
     lazyImages.forEach(img => imageObserver.observe(img));
 }
+
+/* ================================
+   RATING TABS
+================================ */
+function switchRatingTab(tabId) {
+    // Get all tabs and panels
+    const tabs = document.querySelectorAll('.rating-tab');
+    const panels = document.querySelectorAll('.rating-panel');
+
+    // Remove active class from all tabs and panels
+    tabs.forEach(tab => tab.classList.remove('active'));
+    panels.forEach(panel => panel.classList.remove('active'));
+
+    // Add active class to clicked tab
+    const activeTab = document.querySelector(`[data-rating="${tabId}"]`);
+    if (activeTab) {
+        activeTab.classList.add('active');
+    }
+
+    // Show corresponding panel (panels have "panel-" prefix)
+    const activePanel = document.getElementById(`panel-${tabId}`);
+    if (activePanel) {
+        activePanel.classList.add('active');
+    }
+
+    // Smooth scroll to training section on mobile
+    if (window.innerWidth < 768) {
+        const trainingSection = document.getElementById('training');
+        if (trainingSection) {
+            const navbarHeight = document.getElementById('navbar')?.offsetHeight || 0;
+            const targetPosition = trainingSection.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 20;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
+}
